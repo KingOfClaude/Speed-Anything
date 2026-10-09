@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Speed Anything",
+  "version": "1.2.0",
+  "description": "Speed up any video or audio player on any site, from 0.1x up to 100x. Use + and - or the popup.",
+  "action": {
+    "default_title": "Speed Anything",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" }
+  },
+  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "permissions": ["activeTab", "storage"]
+}

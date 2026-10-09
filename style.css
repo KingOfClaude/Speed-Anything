@@ -1,0 +1,24 @@
+:root{color-scheme:light dark;--bg:light-dark(#f7f6f2,#15171b);--card:light-dark(#fff,#1e2127);--fg:light-dark(#1d2129,#e6e8ec);
+--mut:light-dark(#6b7280,#8b93a1);--bd:light-dark(#e2e0d8,#2c313a);--acc:light-dark(#1f6f5c,#4cc2a4);--acc-fg:light-dark(#fff,#0c1512);--bad:#c0392b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,sans-serif}
+button,input{font:inherit;color:inherit;background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:6px 10px}
+button{cursor:pointer}button:hover{border-color:var(--acc)}button:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:1px}
+.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 10px}
+.mut,small{color:var(--mut)}small{display:block;font-size:12px}
+.popup{width:330px;padding:12px}
+
+.speed{flex-wrap:nowrap;justify-content:space-between;margin-bottom:6px}
+.speed button{width:40px;height:40px;padding:0;font-size:20px;line-height:1;flex:none}
+.val{flex:1;display:flex;align-items:baseline;justify-content:center;gap:2px}
+.val input{width:120px;border:0;background:transparent;padding:0;font-size:40px;font-weight:600;letter-spacing:-.01em;
+text-align:right;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.val input::-webkit-inner-spin-button,.val input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.val span{font-size:22px;color:var(--mut)}
+#slider{width:100%;margin:6px 0 0;padding:0;border:0;background:none;accent-color:var(--acc)}
+.scale{display:flex;justify-content:space-between;font-size:12px;margin-top:2px}
+.chips{gap:4px;margin:12px 0 10px}
+.chips button{padding:3px 9px;border-radius:99px;font-size:12px}
+.chips button.on{background:var(--acc);color:var(--acc-fg);border-color:var(--acc)}
+#status{margin:0 0 10px;font-size:13px;min-height:20px}
+#status.warn{min-height:0;border:1px solid var(--bad);border-radius:8px;padding:8px 12px;color:var(--fg)}
+.opt{display:flex;align-items:center;gap:8px;margin-top:6px;cursor:pointer}.opt input{padding:0;accent-color:var(--acc)}

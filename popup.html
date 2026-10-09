@@ -1,0 +1,14 @@
+<!doctype html><meta charset="utf-8"><title>Speed Anything</title><link rel="stylesheet" href="style.css">
+<body class="popup">
+<div class="bar speed">
+<button id="minus" aria-label="Slower">−</button>
+<label class="val"><input id="num" type="number" min="0.1" max="100" step="0.05" value="1" aria-label="Playback speed"><span>×</span></label>
+<button id="plus" aria-label="Faster">+</button>
+</div>
+<input id="slider" type="range" min="0" max="1000" value="333" aria-label="Speed slider">
+<div class="scale mut"><span>0.1×</span><span>1×</span><span>100×</span></div>
+<div class="bar chips" id="presets"></div>
+<p id="status" class="mut" role="status"></p>
+<label class="opt"><input id="keys" type="checkbox" checked>Use + and − keys on the page</label>
+<label class="opt"><input id="badge" type="checkbox" checked>Show speed on the video</label>
+<script src="popup.js"></script>

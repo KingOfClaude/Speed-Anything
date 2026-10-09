@@ -1,0 +1,46 @@
+:root {
+  --bg: #eef0f4;
+  --panel: #ffffff;
+  --ink: #161a23;
+  --muted: #667085;
+  --accent: #2446ff;
+  --line: #d5d9e2;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #14171f; --panel: #1d212c; --ink: #f1f3f8; --muted: #98a1b3; --accent: #7b92ff; --line: #333a4a; }
+}
+* { box-sizing: border-box; }
+body {
+  width: 300px; margin: 0; padding: 18px;
+  background: var(--bg); color: var(--ink);
+  font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.readout { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.step {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1.5px solid var(--line); background: var(--panel); color: var(--ink);
+  font-size: 22px; cursor: pointer;
+}
+.step:hover { border-color: var(--accent); color: var(--accent); }
+.step:focus-visible, .presets button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.value { display: flex; align-items: baseline; justify-content: center; gap: 2px; flex: 1; }
+.value input {
+  width: 100%; max-width: 130px; border: 0; background: transparent; color: var(--ink);
+  font: 700 44px/1 system-ui, sans-serif; letter-spacing: -0.03em; text-align: right;
+  font-variant-numeric: tabular-nums; -moz-appearance: textfield; padding: 0;
+}
+.value input::-webkit-inner-spin-button, .value input::-webkit-outer-spin-button { -webkit-appearance: none; }
+.value span { font-size: 26px; color: var(--muted); font-weight: 600; }
+#slider { width: 100%; margin: 14px 0 0; accent-color: var(--accent); }
+.scale { display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; margin-top: 2px; }
+.presets { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 14px; }
+.presets button {
+  padding: 7px 0; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--panel); color: var(--ink); font: 600 13px system-ui, sans-serif; cursor: pointer;
+}
+.presets button:hover { border-color: var(--accent); }
+.presets button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.status { min-height: 18px; margin: 12px 0 8px; font-size: 12px; color: var(--muted); }
+.status.warn { color: #c2410c; }
+.check + .check { margin-top: 6px; }
+.check { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; }
